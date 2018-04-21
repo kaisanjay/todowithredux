@@ -5,7 +5,8 @@ import { addReminder, deleteReminder } from '../actions';
 
 class App extends React.Component {
 	state = {
-		text: ''
+		text: '',
+		dueDate: ''
 	}
 
 	handleChange = (e) => {
@@ -61,6 +62,10 @@ class App extends React.Component {
 					   />
 					 </div>
 					 <div>
+					 <input className="form-control"
+					        type="datetime-local"
+					        onChange={event => this.setState({dueDate: event.target.value})} 
+					 />
 					 <button
 					    type="button"
 					    className="btn btn-success"
